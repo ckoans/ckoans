@@ -1,0 +1,19 @@
+CC=cc
+CFLAGS=-I.
+DEPS=hellofunc.h
+OBJ=main.o hellofunc.o
+
+# Dependencies handling, using $(DEPS)
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+# A generalized compilation statement
+main: $(OBJ)
+	$(CC) -o $@ $^ $(CFLAGS)
+	# $@ refers to everything on the left side of `:`, which is `main`.
+	# $^ refers to everything on the right side of `:`, which is `$(OBJ)`.
+
+# What this does
+# cc -c -o main.o main.c -I.
+# cc -c -o hellofunc.o hellofunc.c -I.
+# cc -o main main.o hellofunc.o -I.

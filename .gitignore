@@ -3,8 +3,10 @@
 
 # Unignore all with extensions
 !*.*
-!Makefile
-!ex*/
+!Makefile*
+!*/
+
+*/build*/
 
 # vim
 *.swp

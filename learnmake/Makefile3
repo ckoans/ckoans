@@ -1,0 +1,19 @@
+CC=cc
+CFLAGS=-I.
+
+# Dependencies handling
+DEPS=hellofunc.h
+
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+	# -c flag asks CC to generate object files
+	# $@ puts the output of the compilation in the file named on the left side of the `:`
+	# $< is the first item in $(DEPS)
+
+main: main.o hellofunc.o
+	$(CC) -o main main.o hellofunc.o $(CFLAGS)
+
+# What this does
+# cc -c -o main.o main.c -I.
+# cc -c -o hellofunc.o hellofunc.c -I.
+# cc -o main main.o hellofunc.o -I.

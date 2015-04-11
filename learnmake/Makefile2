@@ -1,0 +1,14 @@
+# special constants \
+  CC is the C compiler to use \
+  CFLAGS is the list of flags to pass to CC
+CC=cc
+CFLAGS=-I.
+
+# we use .o so only the latest changes are re-compiled
+main: main.o hellofunc.o
+	$(CC) -o main main.o hellofunc.o $(CFLAGS)
+
+# What this does
+# cc -I.   -c -o main.o main.c
+# cc -I.   -c -o hellofunc.o hellofunc.c
+# cc -o main main.o hellofunc.o -I.

@@ -1,0 +1,29 @@
+# where library headers .h files are placed
+IDIR =./include
+CC=gcc
+CFLAGS=-I$(IDIR)
+
+# sub-directory where object files are created
+ODIR=obj
+# where library source code .c files are placed
+LDIR =./lib
+
+LIBS=-lm
+
+_DEPS = hellofunc.h
+DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
+
+_OBJ = main.o hellofunc.o
+OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
+
+$(ODIR)/%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+main: $(OBJ)
+	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+
+# prevents make from doing something with any file named clean
+.PHONY: clean
+
+clean:
+	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~
