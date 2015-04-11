@@ -1,4 +1,4 @@
-// make && valgrind --leak-check --suppressions=objc.supp ./memleak
+// make && valgrind --leak-check=yes --suppressions=objc.supp ./memleak
 #include <stdio.h>
 #include <stdlib.h>
 
