@@ -1,6 +1,6 @@
-# ckoans
+# C Koans
 
-ckoans
+Practising C programming.
 
 ## Useful references
 

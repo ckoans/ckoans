@@ -11,6 +11,9 @@
 # vim
 *.swp
 
+# python
+*.pyc
+
 # Object files
 *.o
 *.ko
