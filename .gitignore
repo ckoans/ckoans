@@ -4,7 +4,10 @@
 # Unignore all with extensions
 !*.*
 !Makefile
-!ex*
+!ex*/
+
+# vim
+*.swp
 
 # Object files
 *.o
