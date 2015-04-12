@@ -35,6 +35,8 @@ import ycm_core
 
 flags = [
     '-Wall',
+    '-std=c99',
+    '-x', 'c',
 ]
 
 
