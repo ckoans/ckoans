@@ -4,16 +4,16 @@ Write source code and Makefile
 
 ## Automake
 
-1) autoscan                     
+1) autoscan
     `configure.scan` gets generated
-    
-2) mv configure.scan configure.ac  	
+
+2) mv configure.scan configure.ac
     we will be customizing `configure.ac` later
-    
-3) autoconf                        			
+
+3) autoconf
     `configure` gets generated
-    
-4) mv Makefile Makefile.in         	
+
+4) mv Makefile Makefile.in
     `Makefile.in` will be the template for our new Makefile
 
 ## Build with ./configure and make
@@ -39,7 +39,7 @@ config.status: error: cannot find input file: `config.h.in'`
 
 ## Portability with config.h
 
-5) autoheader                      	
+5) autoheader
     `config.h.in` gets generated
 
 If we run `./configure` now, `/config.h` will get created.
