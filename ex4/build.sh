@@ -2,7 +2,10 @@
 
 mkdir -p buildvalgrind
 cd buildvalgrind
-svn co svn://svn.valgrind.org/valgrind/trunk/@14960 valgrind
+# r14960 for Xcode 6.2
+# svn co svn://svn.valgrind.org/valgrind/trunk/@14960 valgrind
+# r15088 for Xcode 6.3
+svn co svn://svn.valgrind.org/valgrind/trunk/@15088 valgrind
 cd valgrind
 ./autogen.sh
 ./configure --prefix=/usr/local
