@@ -5,6 +5,7 @@ CXXFLAGS=-Wall -g -std=c++11 -I.
 
 DEPS=CPP.h
 OBJ=main.o CPP.o
+TARGET=main
 
 RM=rm -f
 
@@ -17,8 +18,11 @@ RM=rm -f
 	$(CXX) -c -o $@ $< $(CXXFLAGS)
 
 # link
-main: $(OBJ)
+$(TARGET): $(OBJ)
 	$(CXX) -o $@ $^ $(CXXFLAGS)
 
 clean:
 	$(RM) $(OBJ)
+
+uninstall:
+	$(RM) $(TARGET)
